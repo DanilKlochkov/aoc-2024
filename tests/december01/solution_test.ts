@@ -4,10 +4,10 @@ import second from "../../solutions/december01/second.ts";
 
 const data = `3   4\n4   3\n2   5\n1   3\n3   9\n3   3`
 
-Deno.test("Check first", () => {
+Deno.test("Check first 01dec", () => {
     assertEquals(first(data), 11);
 });
 
-Deno.test("Check second", () => {
+Deno.test("Check second 01dec", () => {
     assertEquals(second(data), 31);
 });

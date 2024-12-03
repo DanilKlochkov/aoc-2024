@@ -2,14 +2,15 @@ import {assertEquals} from "@std/assert";
 import first from "../../solutions/december{{day}}/first.ts";
 import second from "../../solutions/december{{day}}/second.ts";
 
-const data = ``;
+const firstData = ``;
+const secondData = ``;
 
 Deno.test({
-    name: "Check first ${}dec",
+    name: "Check first {{day}}dec",
     permissions: {read: true},
     fn: async (ctx) => {
         await ctx.step("check test data", () => {
-            assertEquals(first(data), 0);
+            assertEquals(first(firstData), 0);
         })
         await ctx.step("check real data", async () => {
             const data = await Deno.readTextFile("./tests/december{{day}}/data.txt");
@@ -19,11 +20,11 @@ Deno.test({
 });
 
 Deno.test({
-    name: "Check second ${}dec",
+    name: "Check second {{day}}dec",
     permissions: {read: true},
     fn: async (ctx) => {
         await ctx.step("check test data", () => {
-            assertEquals(second(data), 0);
+            assertEquals(second(secondData), 0);
         })
         await ctx.step("check real data", async () => {
             const data = await Deno.readTextFile("./tests/december{{day}}/data.txt");

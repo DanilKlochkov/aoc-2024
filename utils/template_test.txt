@@ -2,33 +2,39 @@ import {assertEquals} from "@std/assert";
 import first from "../../solutions/december{{day}}/first.ts";
 import second from "../../solutions/december{{day}}/second.ts";
 
-const firstData = ``;
-const secondData = ``;
+const firstData = "";
+const secondData = "";
 
 Deno.test({
     name: "Check first {{day}}dec",
+    fn: () => {
+        assertEquals(first(firstData), 0);
+    }
+});
+
+Deno.test({
+    name: "Check first {{day}}dec real data",
     permissions: {read: true},
-    fn: async (ctx) => {
-        await ctx.step("check test data", () => {
-            assertEquals(first(firstData), 0);
-        })
-        await ctx.step("check real data", async () => {
-            const data = await Deno.readTextFile("./tests/december{{day}}/data.txt");
-            assertEquals(first(data), 0);
-        })
+    ignore: true,
+    fn: async () => {
+        const data = await Deno.readTextFile("./tests/december{{day}}/data.txt");
+        assertEquals(first(data), 0);
     }
 });
 
 Deno.test({
     name: "Check second {{day}}dec",
+    fn: () => {
+        assertEquals(second(secondData), 0);
+    }
+});
+
+Deno.test({
+    name: "Check second {{day}}dec real data",
     permissions: {read: true},
-    fn: async (ctx) => {
-        await ctx.step("check test data", () => {
-            assertEquals(second(secondData), 0);
-        })
-        await ctx.step("check real data", async () => {
-            const data = await Deno.readTextFile("./tests/december{{day}}/data.txt");
-            assertEquals(second(data), 0);
-        })
+    ignore: true,
+    fn: async () => {
+        const data = await Deno.readTextFile("./tests/december{{day}}/data.txt");
+        assertEquals(second(data), 0);
     }
 });
